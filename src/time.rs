@@ -126,7 +126,7 @@ pub fn weekday_frm_date(date: &Date) -> Weekday {
     let date_0UT = Date {
         year: date.year,
         month: date.month,
-        decimal_day: date.decimal_day.floor() as f64,
+        decimal_day: date.decimal_day.floor(),
         cal_type: CalType::Gregorian
     };
     let JD = julian_day(&date_0UT);
@@ -200,7 +200,7 @@ Checks if a year is a leap year
 * `year`    : Year
 * `cal_type`: `CalType` enum
 **/
-pub fn is_leap_year(year: i16, cal_type: &CalType) -> (bool) {
+pub fn is_leap_year(year: i16, cal_type: &CalType) -> bool {
 
     match cal_type {
         &CalType::Julian    => year % 4 == 0,
