@@ -6,6 +6,8 @@ authors = ["Saurav Sachidanand"]
 
 license = "MIT"
 
+edition = "2021"
+
 repository = "https://www.github.com/saurvs/astro-rust"
 documentation = "https://saurvs.github.io/astro-rust"
 

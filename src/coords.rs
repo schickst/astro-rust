@@ -22,7 +22,7 @@ THE SOFTWARE.
 
 //! Transform between coordinate systems
 
-use angle;
+use crate::angle;
 
 /// Represents a point on the geographical surface of the Earth
 #[derive(Debug)]
@@ -94,9 +94,7 @@ sidereal time
 **/
 #[inline]
 pub fn hr_angl_frm_observer_long(green_sidreal: f64, observer_long: f64, asc: f64) -> f64 {
-
-    green_sidreal - observer_long - asc
-
+    green_sidreal + observer_long - asc
 }
 
 /**

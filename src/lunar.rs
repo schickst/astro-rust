@@ -22,9 +22,9 @@ THE SOFTWARE.
 
 //! The Earth's moon
 
-use angle;
-use coords;
-use time;
+use crate::angle;
+use crate::coords;
+use crate::time;
 
 /**
 Computes the equatorial horizontal parallax of the Moon
@@ -1114,7 +1114,8 @@ pub fn time_of_phase(date: &time::Date, phase: &Phase) -> f64 {
             0.00306
           - 0.00038 * E * M.cos()
           + 0.00026 * M1.cos();
-          - 0.00002 * ((M1 - M).cos() - (M1 + M).cos() - (2.0 * F).cos());
+        // FIXME Why is there a semicolon above in the original code?
+        //  - 0.00002 * ((M1 - M).cos() - (M1 + M).cos() - (2.0 * F).cos());
 
         JD += match phase {
             &Phase::Last  => -W,
