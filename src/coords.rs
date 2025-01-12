@@ -94,9 +94,7 @@ sidereal time
 **/
 #[inline]
 pub fn hr_angl_frm_observer_long(green_sidreal: f64, observer_long: f64, asc: f64) -> f64 {
-
-    green_sidreal - observer_long - asc
-
+    green_sidreal + observer_long - asc
 }
 
 /**
@@ -374,7 +372,7 @@ pub fn dec_frm_hz(az: f64, alt: f64, observer_lat: f64) -> f64 {
 
     (
         observer_lat.sin() * alt.sin()
-      - observer_lat.cos() * az.cos() * az.cos()
+      - observer_lat.cos() * alt.cos() * az.cos()
     ).asin()
 
 }
