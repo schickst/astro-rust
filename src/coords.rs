@@ -372,7 +372,7 @@ pub fn dec_frm_hz(az: f64, alt: f64, observer_lat: f64) -> f64 {
 
     (
         observer_lat.sin() * alt.sin()
-      - observer_lat.cos() * az.cos() * az.cos()
+      - observer_lat.cos() * alt.cos() * az.cos()
     ).asin()
 
 }
