@@ -137,6 +137,14 @@ pub fn time (
         &TransitType::Set     => (h - h0) / (angle::TWO_PI * dec.cos() * geograph_point.lat.cos() * H.sin())
     };
 
+    // Normalize according to Meeus page 98
+    if m < 0.0 {
+        m += 1.0;
+    }
+    if m > 1.0 {
+        m -= 1.0;
+    }
+
     let h = 24.0 * m;
     let hour = h as i64;
     let m = (h - (hour as f64)) * 60.0;
