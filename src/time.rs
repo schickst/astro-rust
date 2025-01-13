@@ -62,6 +62,26 @@ pub enum Month {
     Dec = 12,
 }
 
+impl From<u8> for Month {
+    fn from(val: u8) -> Month {
+        match val {
+            1 => Month::Jan,
+            2 => Month::Feb,
+            3 => Month::Mar,
+            4 => Month::Apr,
+            5 => Month::May,
+            6 => Month::June,
+            7 => Month::July,
+            8 => Month::Aug,
+            9 => Month::Sept,
+            10 => Month::Oct,
+            11 => Month::Nov,
+            12 => Month::Dec,
+            _ => panic!("Invalid Month (Must be between 1 and 12)")
+        }
+    }
+}
+
 /// Represents a date with year, month, decimal day and calendar type
 #[derive(Debug)]
 pub struct Date {
